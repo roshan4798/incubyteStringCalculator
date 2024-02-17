@@ -31,10 +31,14 @@ public class StringClaculatorTest {
 		assertEquals(6, calculator.add("1\n2,3"));
 	}
 	
-	
 	@Test
 	public void testNegativeNumbers() {
 		assertThrows(IllegalArgumentException.class, ()->calculator.add("-1,2,-3"));
+	}
+	
+	@Test
+	public void testDifferentDelimiter() {
+		assertEquals(3,calculator.add("//;\n1;2"));
 	}
 
 }

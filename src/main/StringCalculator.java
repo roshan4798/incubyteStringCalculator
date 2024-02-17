@@ -11,7 +11,14 @@ public class StringCalculator {
 	    	return 0;
 	    }
 	    
-	    String nums[]=numbers.split("[,\n]");
+	    String delimiter=",";
+	    if(numbers.startsWith("//")) {
+	    	int delimiterIndex=numbers.indexOf("//")+2;
+	    	delimiter=numbers.substring(delimiterIndex,delimiterIndex+1);
+	    	numbers=numbers.substring(numbers.indexOf("\n")+1);
+	    }
+	    
+	    String nums[]=numbers.split("["+delimiter+"\n]");
 	    ArrayList<Integer> negatives=new ArrayList<>();
 	    
 	    for(String num : nums) {
