@@ -9,6 +9,11 @@ public class StringCalculator {
 	    	return 0;
 	    }
 	    
+	    String nums[]=numbers.split(",");
+	    for(String num : nums) {
+	    	sum+=Integer.parseInt(num);
+	    }
+	    
 	    return sum;
 	}
 
