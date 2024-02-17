@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 import org.junit.Test;
 
@@ -28,6 +29,12 @@ public class StringClaculatorTest {
 	@Test
 	public void testNewLineBetweenNumbers() {
 		assertEquals(6, calculator.add("1\n2,3"));
+	}
+	
+	
+	@Test
+	public void testNegativeNumbers() {
+		assertThrows(IllegalArgumentException.class, ()->calculator.add("-1,2,-3"));
 	}
 
 }
